@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator()
 
 export default function Routes(){
     return(
-        <Stack.Navigator initialRouteName='Denuncia'>
+        <Stack.Navigator initialRouteName='Login'>
             
             <Stack.Screen 
                 name='Login'

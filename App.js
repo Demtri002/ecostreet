@@ -1,22 +1,24 @@
 import React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 
 import RoutesNavigation from './src/routes/indexNavigation'
-
+import ContextProvider from './src/content/context'
 
 
 
 const App = () => {
 
-  return(
-    <NavigationContainer>
-        
+  return (
+    <ContextProvider>
+      <NavigationContainer>
+
         <RoutesNavigation />
-        
 
-    </NavigationContainer>
 
-)
+      </NavigationContainer>
+    </ContextProvider>
+
+  )
 }
 
 

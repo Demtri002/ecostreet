@@ -64,17 +64,6 @@ const Local = () => {
                     <Text style={styles.title}>
                         Informe nos campos abaixo o endereço do local da denúncia.
                     </Text>
-                    <View style={styles.checkboxContainer}>
-                    <CheckBox
-                    style={styles.checkbox}
-                    value={agree}
-                    onValueChange={() => setAgree(!agree)}
-                    color={agree ? "#4630EB" : undefined}
-                    />
-                    <Text style={styles.textCheckbox}>Área não urbanizada</Text>
-                    
-                     
-                     </View>
 
                      <View style={styles.inputContainer}>
                     <TextInput style={styles.input} placeholder='CEP *'  onChangeText={handleCepChange} maxLength={8}></TextInput>

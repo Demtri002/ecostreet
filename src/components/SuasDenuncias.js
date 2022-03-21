@@ -2,12 +2,14 @@ import React from 'react'
 import { View, Button,Text, Image, TouchableOpacity} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useUser } from '../content/context'
 
 import styles from '../styles/suasDenuncias'
 
 
 const SuasDenuncias = ({navigation}) => {
-
+    const { userLogado, setUserLogado } = useUser()
+    
     return(
         <SafeAreaView>
             <ScrollView>

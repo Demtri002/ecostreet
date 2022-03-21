@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
 import {View, Text, TextInput, Button, TouchableOpacity, Image, ScrollView} from 'react-native'
 import styles from '../styles/login'
-
+import { useUser } from '../content/context'
 
 const Login = ({navigation}) => {
 
     const[email, setEmail] = useState()
     const[senha, setSenha] = useState()
     const [error, setError] = useState(false)
+    const { userLogado, setUserLogado } = useUser()
 
     const authUser = async (req, res) => {
             const dadosUsuario = await fetch("http://localhost:3000/users")
             const dadosJson =  await dadosUsuario.json()
-
+            
+            
             dadosJson.map(e =>{
                 if(e.email == email && e.senha == senha){
-                    navigation.navigate('SuasDenuncias')
+    
+                   setUserLogado(e)
+                   
+                     navigation.navigate('SuasDenuncias')
                 }else{
                     setError(true)
                 }
