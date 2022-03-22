@@ -2,80 +2,78 @@ import {StyleSheet} from 'react-native'
 
 export default StyleSheet.create({
     container: {
-        height: '100%',
-        backgroundColor: '#DFEEEA',
-        flexDirection:'column'
+        alignItems: 'center',
+        flex:1,
     },
-    text1: {
-        marginTop: 30,
-        marginRight: 25,
-        marginLeft: 25,
-        marginBottom: 70,
+
+    wallpaper:{
+        opacity: 0.75
+    },
+
+    logo:{
+        position: 'absolute',
+        marginTop: 70,
+        width: 200,
+        height: 200
+    },
+
+    content:{
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        marginTop: -100,
+        width: '100%',
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50
+    },
+
+    title:{
+        color: '#0D0F12',
         textAlign: 'center',
-        fontSize: 30
+        margin: 25,
+        fontSize: 25
     },
-    text2: {
-        marginRight: 25,
-        marginLeft: 25,
-        textAlign: 'center',
-        fontSize: 20
-    },
-    input: {
+
+    input:{
         width: '80%',
         padding: 10,
-        borderColor: 'green',
+        margin: 50,
         borderBottomWidth: 2,
-        borderBottomColor: '#00D192',
-        borderTopWidth: 0,
-        borderRightWidth: 0,
-        borderLeftWidth: 0,
-        marginLeft: 30,
-        marginRight: 30,
-        marginTop: 45
+        borderBottomColor: '#A4EFC1',
     },
+
     texterro: {
         color: 'red',
         marginLeft:30
     },
-    recsenha: {
-        textAlign:'right',
-        marginRight: 45,
-        marginTop: 10,
-        color: '#0000FF'
+
+    button:{
+        width: '80%',
+        marginBottom: 30,
+        backgroundColor: '#0F644D',
+        borderRadius: 25
     },
-    containerButton:{
-        alignItems: 'center'
+
+    textButton:{
+        color: '#fff',
+        fontSize: 20,
+        textAlign: 'center',
+        padding: 20
     },
-    carcButton: {
-        marginTop: 70,
-        borderRadius: 25,
-        backgroundColor: '#002F21',
-        width: '50%',
-        padding: 10,
-    },
-    textButton: {
-        color: 'white',
-        textAlign:'center'
-    },
-    display: {
+
+    display:{
         flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 40,
-        marginBottom: 20
+        marginBottom: 50
     },
+
+    p1:{
+        fontSize: 15
+    },
+
     p2:{
-        color:'#0000FF'
+        fontSize: 15,
+        color: '#0000ff',
+        textDecorationLine: 'underline'
     },
-    header:{
-        padding:32,
-        width: '100%',
-        height: 135,
-        backgroundColor: '#002f21',
-        alignItems:'center'
-    },
-    imgHeader: {
-        width: 200,
-        height: 110
-    }
+
 
 })

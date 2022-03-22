@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image, TextInput, ScrollView, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Image, TextInput, ScrollView, SafeAreaView } from 'react-native';
 import styles from '../styles/cadastro'
 
 const Cadastro = ({ navigation }) => {
@@ -49,42 +49,60 @@ const Cadastro = ({ navigation }) => {
     }
 
     return (
+        <SafeAreaView>
         <ScrollView style={styles.scrollView}>
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <Image
-                        source={require('../assets/header.png')}
-                        style={styles.imgHeader}
-                    />
-                </View>
+                        
+                        <Image
+                            source={require('../assets/cadastro-wallpaper.png')}
+                            style={styles.wallpaper}
+                         />
 
-                <Text style={styles.text1}>Cadastre-se, é grátis!</Text>
-                <Text style={styles.text2}>Crie sua conta</Text>
+                         <Image
+                            source={require('../assets/cadastro-logo.png')}
+                            style={styles.logo}
+                         />
 
-                <TextInput style={styles.input} placeholder='Nome:' onChangeText={handleNomeChange}></TextInput>
-                <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
-                <TextInput style={styles.input} placeholder='Sobrenome:' onChangeText={handleSobrenomeChange}></TextInput>
-                <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
-                <TextInput style={styles.input} placeholder='E-mail:' keyboardType='email-address' onChangeText={handleEmailChange}></TextInput>
-                <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
-                <TextInput style={styles.input} placeholder='CPF:' keyboardType="numeric" maxLength={11} onChangeText={handleCpfChange}></TextInput>
-                <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
-                <TextInput style={styles.input} placeholder='Senha:' onChangeText={handleSenhaChange} secureTextEntry={true} ></TextInput>
-                <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
-                <TextInput style={styles.input} placeholder='Confirme sua senha:' onChangeText={handleConfirmChange} secureTextEntry={true} ></TextInput>
-                <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+                          <View style={styles.content}>
 
-                <View style={styles.containerButton}>
-                    <TouchableOpacity style={styles.carcButton} onPress={postUser}>
-                        <Text style={styles.textButton}>Cadastrar</Text>
-                    </TouchableOpacity>
+                          <Text style={styles.title}>Cadastro</Text>
+
+                        <TextInput style={styles.input} placeholder='Nome:' onChangeText={handleNomeChange}></TextInput>
+                        <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+               
+                        <TextInput style={styles.input} placeholder='Sobrenome:' onChangeText={handleSobrenomeChange}></TextInput>
+                        <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+                
+                        <TextInput style={styles.input} placeholder='E-mail:' keyboardType='email-address' onChangeText={handleEmailChange}></TextInput>
+                        <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+                
+                        <TextInput style={styles.input} placeholder='CPF:' keyboardType="numeric" maxLength={11} onChangeText={handleCpfChange}></TextInput>
+                        <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+                
+                        <TextInput style={styles.input} placeholder='Senha:' onChangeText={handleSenhaChange} secureTextEntry={true} ></TextInput>
+                        <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+                
+                        <TextInput style={styles.input} placeholder='Confirme sua senha:' onChangeText={handleConfirmChange} secureTextEntry={true} ></TextInput>
+                        <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
+
+
+                        <TouchableOpacity style={styles.button} onPress={postUser}>
+                                        <Text style={styles.textButton}>CADASTRAR</Text>
+                                </TouchableOpacity>
+                    
                     <View style={styles.display}>
-                        <Text>Já tem uma conta?</Text>
-                        <Text style={styles.p2} onPress={() => navigation.navigate("Login")}> Faça Login</Text>
+                    <Text style={styles.p1}>Já tem uma conta?</Text>
+                    <Text style={styles.p2} onPress={() => navigation.navigate("Login")}> Faça login!</Text>
                     </View>
-                </View>
+                            </View>
+                                
+
+               
+                
+                           
             </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 
