@@ -1,14 +1,19 @@
 import React, { createContext, useContext, useState } from 'react'
+import { validatePathConfig } from '@react-navigation/native'
 
 const contextUser = createContext()
+const contextDenuncia = createContext()
 export default function ContextProvider({children}){
     const [userLogado,setUserLogado] = useState()
+    const [userDenuncia, setUserDenuncia] = useState()
 
     return(
         <contextUser.Provider
             value={{
                 userLogado,
-                setUserLogado
+                setUserLogado,
+                userDenuncia,
+                setUserDenuncia
             }}
         >
             {children}

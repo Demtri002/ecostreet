@@ -36,14 +36,16 @@ export default StyleSheet.create({
     input:{
         width: '80%',
         padding: 10,
-        margin: 50,
+        marginLeft:50,
+        marginRight:50,
+        marginTop:50,
         borderBottomWidth: 2,
         borderBottomColor: '#A4EFC1',
     },
 
     texterro: {
         color: 'red',
-        marginLeft:30
+        marginBottom:50
     },
 
     button:{

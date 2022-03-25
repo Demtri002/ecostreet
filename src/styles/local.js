@@ -61,6 +61,7 @@ export default StyleSheet.create({
     },
     texterro:{
         color:'red',
+        marginRight: 40
     },
     inputContainer:{
         textAlign: 'center',
@@ -73,7 +74,7 @@ export default StyleSheet.create({
     },
 
     carcButton:{
-        backgroundColor: '#002F21',
+        backgroundColor: '#0F644D',
         padding: 12,
         borderRadius: 20,
         width: 150,

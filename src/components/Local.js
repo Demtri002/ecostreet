@@ -4,7 +4,7 @@ import styles from '../styles/local';
 import CheckBox from "expo-checkbox";
 
 
-const Local = () => {
+const Local = ({navigation}) => {
 
     const [agree, setAgree] = useState(false);
     const [cep, setCep] = useState('')
@@ -41,11 +41,12 @@ const Local = () => {
                             complemento: complemento
                         })
                     }
+                    
                     await fetch('http://localhost:3000/local_d/', requestOptions)
                 } catch (error) {
                     console.log(error.message)
                 } finally {
-                    console.log(cep, rua, numero, cidade, estado, complemento);
+                    navigation.navigate('Denuncia')
                 }
             } else {
                 setErro(true)
@@ -83,7 +84,7 @@ const Local = () => {
 
                     </View>
                     <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.carcButton} onPress={PostDenuncia}>
+                        <TouchableOpacity style={styles.carcButton} onPress={PostDenuncia} >
                             <Text style={styles.textButton}>Prosseguir</Text>
                         </TouchableOpacity>
                     </View>

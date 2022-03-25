@@ -10,12 +10,14 @@ import Local from '../components/Local'
 import FrontPaulo from '../components/FrontPaulo'
 import Usuario from '../components/Usuario'
 import Denuncia from '../components/Denuncia'
+import PaginaInicial from '../components/PaginaInicial'
 
 const Stack = createNativeStackNavigator()
 
 export default function Routes(){
     return(
-        <Stack.Navigator initialRouteName='Login'>
+        <Stack.Navigator initialRouteName='PaginaInicial'>
+            
             
             <Stack.Screen 
                 name='Login'
@@ -88,6 +90,14 @@ export default function Routes(){
                 component={Denuncia}
                 options={{
                     headerShown: true
+                }}
+            />
+
+            <Stack.Screen
+                name= 'PaginaInicial'
+                component={PaginaInicial}
+                options={{
+                    headerShown: false
                 }}
             />
             
