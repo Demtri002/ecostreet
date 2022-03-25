@@ -7,12 +7,12 @@ export default StyleSheet.create({
         flexDirection:'column'
     },
     text1: {
-        marginTop: 30,
+        marginTop: 60,
         marginRight: 25,
         marginLeft: 25,
         marginBottom: 70,
         textAlign: 'center',
-        fontSize: 28
+        fontSize: 25
     },
     text2: {
         marginRight: 25,
@@ -23,9 +23,9 @@ export default StyleSheet.create({
     input: {
         width: '80%',
         padding: 10,
-        borderColor: '#0099DD',
+        borderColor: 'green',
         borderBottomWidth: 2,
-        borderBottomColor: '#00D192',
+        borderBottomColor: '#0D0',
         borderTopWidth: 0,
         borderRightWidth: 0,
         borderLeftWidth: 0,
@@ -37,9 +37,9 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     carcButton: {
-        marginTop: 70,
-        borderRadius: 25,
-        backgroundColor: '#002F21',
+        marginTop: 40,
+        borderRadius: 15,
+        backgroundColor: '#00D192',
         width: '50%',
         padding: 10,
     },
@@ -60,7 +60,7 @@ export default StyleSheet.create({
         padding:32,
         width: '100%',
         height: 135,
-        backgroundColor: '#002f21',
+        backgroundColor: '#00D192',
         alignItems:'center'
     },
     imgHeader: {

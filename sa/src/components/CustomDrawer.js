@@ -10,55 +10,55 @@ const CustomDrawer = (props) => {
     const [data, setData] = useState([])
     console.log(data)
  
-    _storeData = async () => {
-        try{
-            const response = await AsyncStorage.setItem('http://localhost:3000/users/')
-            const json = await response.json()
-            setData(json)
-        }catch (error) {
-            console.error(error)
-        }finally{
+//     _storeData = async () => {
+//         try{
+//             const response = await AsyncStorage.setItem('http://localhost:3000/users/')
+//             const json = await response.json()
+//             setData(json)
+//         }catch (error) {
+//             console.error(error)
+//         }finally{
            
-        }
-}   
-// _retrieveData = async () => {
-//     try {
-//       const value = await AsyncStorage.getItem('TASKS');
-//       if (value !== null) {
-//         // We have data!!
-//         console.log(value);
-//       }
-//     } catch (error) {
-//       // Error retrieving data
-//     }
-//   };
-    const postUser = async () => {
-        if(nome != "" || email != ""){
-            try {
-                const requestOptions = {
-                    method: 'GET',
-                    headers: { 'Content-type': 'application/json'},
-                    body: JSON.stringify({
-                        nome: nome,
-                        email: email
+// //         }
+// // }   
+// // // _retrieveData = async () => {
+// // //     try {
+// // //       const value = await AsyncStorage.getItem('TASKS');
+// // //       if (value !== null) {
+// // //         // We have data!!
+// // //         console.log(value);
+// // //       }
+// // //     } catch (error) {
+// // //       // Error retrieving data
+// // //     }
+// // //   };
+//     const postUser = async () => {
+//         if(nome != "" || email != ""){
+//             try {
+//                 const requestOptions = {
+//                     method: 'GET',
+//                     headers: { 'Content-type': 'application/json'},
+//                     body: JSON.stringify({
+//                         nome: nome,
+//                         email: email
                     
-                    })
-                }
-                await fetch('http://localhost:3000/users/', requestOptions)
-            } catch (error){
-                console.error(error)
-            } finally {
-                navigation.navigate('FrontPaulo')
-            }
-        } else {
+//                     })
+//                 }
+//                 await fetch('http://localhost:3000/users/', requestOptions)
+//             } catch (error){
+//                 console.error(error)
+//             } finally {
+//                 navigation.navigate('FrontPaulo')
+//             }
+//         } else {
 
-        }
-    }
+//         }
+//     }
 
 
-    useEffect(() => {
-        getUsers()
-    }, [])
+//     useEffect(() => {
+//         getUsers()
+//     }, [])
 
 
     return(

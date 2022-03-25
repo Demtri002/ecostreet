@@ -57,6 +57,20 @@ const RotaDrawer = () => {
                         ),
                      }} 
                 />
+                    
+                    <Drawer.Screen 
+                    name='Usuario'
+                    component={Usuario}
+                    options={{
+                        drawerIcon: ({color}) => (
+                           <SimpleLineIcons
+                              name="question"
+                              size={25}
+                              color={color}
+                           />
+                        ),
+                     }} 
+                />
 
             </Drawer.Navigator>
     )
