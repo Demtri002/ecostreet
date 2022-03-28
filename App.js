@@ -14,6 +14,11 @@ import {
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
+
+
+const App = () => {
+
+    
 let[fontsLoaded, error] = useFonts({
   ReadexPro_200ExtraLight,
   ReadexPro_300Light,
@@ -27,9 +32,6 @@ if(!fontsLoaded){
   return <AppLoading />
 }
 
-
-
-const App = () => {
 
   return (
     <ContextProvider>

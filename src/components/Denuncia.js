@@ -4,7 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 import styles from '../styles/denuncia';
 
 
-    export default function Denuncia() {
+    export default function Denuncia({navigation}) {
         const [titulo, setTitulo] = useState('')
         const [descricao, setDescricao] = useState('')
         const [erro, setErro] = useState(false)
