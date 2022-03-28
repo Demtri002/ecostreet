@@ -23,15 +23,15 @@ const Usuario = ({navigation}) => {
             {/* <Text style={styles.text2}>Crie sua conta</Text> */}
 
 
-            <TextInput style={styles.input} placeholder='Nome:' onChangeText={handleNomeChange}></TextInput>
-            <TextInput style={styles.input} placeholder='Sobrenome:' onChangeText={handleSobrenomeChange}></TextInput>
-            <TextInput style={styles.input} placeholder='E-mail:' onChangeText={handleEmailChange}></TextInput>
-            <TextInput style={styles.input} placeholder='Senha antiga: ' onChangeText={handleSenhaChange}></TextInput>
+            <TextInput style={styles.input} placeholder='Nome:' ></TextInput>
+            <TextInput style={styles.input} placeholder='Sobrenome:' ></TextInput>
+            <TextInput style={styles.input} placeholder='E-mail:'></TextInput>
+            <TextInput style={styles.input} placeholder='Senha antiga: ' ></TextInput>
             <TextInput style={styles.input} placeholder='Senha nova: '></TextInput>
             <TextInput style={styles.input} placeholder='Confirme sua nova senha:'></TextInput>
            
            
-                <TouchableOpacity style={styles.carcButton} onPress={updateUser}>
+                <TouchableOpacity style={styles.carcButton}>
                     <Text style={styles.textButton}>Editar</Text>
                </TouchableOpacity>
                

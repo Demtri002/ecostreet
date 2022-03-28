@@ -11,6 +11,8 @@ import FrontPaulo from '../components/FrontPaulo'
 import Usuario from '../components/Usuario'
 import Denuncia from '../components/Denuncia'
 import PaginaInicial from '../components/PaginaInicial'
+import SemDenuncia from '../components/SemDenuncia'
+import ComDenuncia from '../components/ComDenuncia'
 
 const Stack = createNativeStackNavigator()
 
@@ -98,6 +100,20 @@ export default function Routes(){
                 component={PaginaInicial}
                 options={{
                     headerShown: false
+                }}
+            />
+            <Stack.Screen
+                name= 'SemDenuncia'
+                component={SemDenuncia}
+                options={{
+                    headerShown: true
+                }}
+            />
+            <Stack.Screen
+                name= 'ComDenuncia'
+                component={ComDenuncia}
+                options={{
+                    headerShown: true
                 }}
             />
             
