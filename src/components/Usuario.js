@@ -10,38 +10,30 @@ const Usuario = ({navigation}) => {
 
 
     return(
-        <ScrollView style={styles.scrollView}>
+        <ScrollView>
         <View style={styles.container}>
-            <View style={styles.header}>
+            {/* <View style={styles.header}>
                 <Image
                     source={require('../assets/header.png')}
                     style={styles.imgHeader}
                 />
-            </View>
+            </View> */}
 
-            <Text style={styles.text1}>Edite suas informações: </Text>
-            {/* <Text style={styles.text2}>Crie sua conta</Text> */}
+            <Text style={styles.title}>Gerencie seus dados pessoais: </Text>
 
-
+            <View style={styles.content}>
             <TextInput style={styles.input} placeholder='Nome:' ></TextInput>
             <TextInput style={styles.input} placeholder='Sobrenome:' ></TextInput>
-            <TextInput style={styles.input} placeholder='E-mail:'></TextInput>
-            <TextInput style={styles.input} placeholder='Senha antiga: ' ></TextInput>
-            <TextInput style={styles.input} placeholder='Senha nova: '></TextInput>
-            <TextInput style={styles.input} placeholder='Confirme sua nova senha:'></TextInput>
+            <TextInput style={styles.input} placeholder='Digite sua nova senha: ' ></TextInput>
+            <TextInput style={styles.input} placeholder='Confirme sua nova senha:'></TextInput> 
+            </View>
            
-           
-                <TouchableOpacity style={styles.carcButton}>
-                    <Text style={styles.textButton}>Editar</Text>
-               </TouchableOpacity>
+              
                
-               <TouchableOpacity style={styles.carcButton}>
+               <TouchableOpacity style={styles.button}>
                     <Text style={styles.textButton}>Atualizar</Text>
                </TouchableOpacity>
-               <View style={styles.display}>
-                 
-               
-            </View>
+              
         </View>
         </ScrollView>
     )
