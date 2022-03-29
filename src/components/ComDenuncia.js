@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {SafeAreaView, ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/comdenuncia';
+import { FlatList } from 'react-native-gesture-handler';
+import { useUser } from '../content/context'
 
 const ComDenuncia = () => {
+    const { userLogado, setUserLogado } = useUser()
+
+    const getDenuncia = async () => {
+        try{
+            const response = await fetch('http://localhost:3000/denuncia/')
+            const json = await response.json()
+        }catch (error) {
+            console.error(error)
+        }finally{
+            console.log('sla');
+            
+        }
+}
+
+        useEffect(() => {
+            getDenuncia()
+        }, [])
+
     return(
         <SafeAreaView>
             <ScrollView>
@@ -10,28 +30,11 @@ const ComDenuncia = () => {
 
             <View style={styles.denunciaContainer}>
             <View style={styles.miniContainer}>
-                    <Text style={styles.title}>Lorem Ipsum</Text>
-                    <Text style={styles.subtitle}>Lorem ipsum dolor sit amet</Text>
-            </View>
-
-            <View style={styles.miniContainer}>
-                    <Text style={styles.title}>Lorem Ipsum</Text>
-                    <Text style={styles.subtitle}>Lorem ipsum dolor sit amet</Text>
-            </View>
-
-            <View style={styles.miniContainer}>
-                    <Text style={styles.title}>Lorem Ipsum</Text>
+                    <Text style={styles.title}>{userLogado.titulo}</Text>
                     <Text style={styles.subtitle}>Lorem ipsum dolor sit amet</Text>
             </View>
             </View>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Categoria')} style={styles.img}>
-                    <Image 
-                        source={require('../assets/add-denuncia.png')}
-                        resizeMode='contain'
-                        style={styles.addButton}
-                    />
-                </TouchableOpacity>
         </View>
         </ScrollView>
         </SafeAreaView>

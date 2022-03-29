@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { View, Text, Image, TextInput, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 import styles from '../styles/denuncia';
+import { useUser } from '../content/context'
 
 
 export default function Denuncia({ navigation }) {
     const [titulo, setTitulo] = useState('')
     const [descricao, setDescricao] = useState('')
     const [erro, setErro] = useState(false)
+    const { userLogado, setUserLogado } = useUser()
 
     const handleTituloChange = (titulo) => { setTitulo(titulo) }
     const handleDescricaoChange = (descricao) => { setDescricao(descricao) }
@@ -20,7 +22,8 @@ export default function Denuncia({ navigation }) {
                     headers: { 'Content-type': 'application/json' },
                     body: JSON.stringify({
                         titulo: titulo,
-                        descricao: descricao
+                        descricao: descricao,
+                        userid:userLogado.userid
                     })
                 }
                 await fetch('http://localhost:3000/denuncia/', requestOptions)

@@ -17,13 +17,6 @@ const SemDenuncia = ({ navigation }) => {
                         <Text style={styles.p2}>Comece a denunciar clicando no botão abaixo!</Text>
                     </View>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('Categoria')} style={styles.img}>
-                        <Image
-                            source={require('../assets/add-denuncia.png')}
-                            resizeMode='contain'
-                            style={styles.addButton}
-                        />
-                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </SafeAreaView>
