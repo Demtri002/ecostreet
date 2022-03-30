@@ -9,15 +9,16 @@ import ComDenuncia from '../components/ComDenuncia'
 import styles from '../styles/suasDenuncias'
 
 const SuasDenuncias = ({ navigation }) => {
-
     const[denunciaArray, setdenunciaArray] = useState([])
+    const { userLogado, setUserLogado } = useUser()
 
     const denunciasUsuario = async (req, res) => {
-            const denuncias = await fetch("http://localhost:3000/denuncia")
+            console.log("FRONT iduser:" + userLogado.id)
+            
+            const denuncias = await fetch("http://localhost:3000/denuncia/" + userLogado.id)
             const dadosJson = await denuncias.json()
             console.warn(dadosJson.length)
             console.log(dadosJson.length)
-            
             
            setdenunciaArray(dadosJson)
     }

@@ -10,6 +10,7 @@ export default function Denuncia({ navigation }) {
     const [descricao, setDescricao] = useState('')
     const [erro, setErro] = useState(false)
     const { userLogado, setUserLogado } = useUser()
+    const { denuncia, setDenuncia} = useState('')
 
     const handleTituloChange = (titulo) => { setTitulo(titulo) }
     const handleDescricaoChange = (descricao) => { setDescricao(descricao) }
@@ -23,12 +24,15 @@ export default function Denuncia({ navigation }) {
                     body: JSON.stringify({
                         titulo: titulo,
                         descricao: descricao,
-                        userid:userLogado.userid
+                        usersid:userLogado.id
                     })
                 }
-                await fetch('http://localhost:3000/denuncia/', requestOptions)
+                await fetch('http://localhost:3000/denuncia', requestOptions)
+                dadosJson.map(e => {
+                    setDenuncia(e)
+                })
             } catch (error) {
-                console.log(error.message)
+                console.log("Erro post: " + error.message)
             } finally {
                 navigation.navigate('SuasDenuncias')
             }
@@ -59,10 +63,10 @@ export default function Denuncia({ navigation }) {
                         </Text>
 
 
-                    <TextInput style={styles.input} placeholder='Título' onChangeText={handleTituloChange}></TextInput>
+                    <TextInput style={styles.input} placeholder='Título' onChange={e => setTitulo(e.target.value)} onChangeText={handleTituloChange}></TextInput>
                     <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
 
-                    <TextInput style={styles.desc} onChangeText={handleDescricaoChange} multiline={true} numberOfLines={10} placeholder='Descrição'></TextInput>
+                    <TextInput style={styles.desc} onChange={e => setDescricao(e.target.value)} onChangeText={handleDescricaoChange} multiline={true} numberOfLines={10} placeholder='Descrição'></TextInput>
                     <Text style={styles.texterro}>{erro == true ? 'Preencha os campos corretamente' : ''}</Text>
 
                     <TouchableOpacity style={styles.pickImg} onPress={openImagePickerAsync}>
