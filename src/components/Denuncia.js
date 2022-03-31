@@ -10,7 +10,7 @@ export default function Denuncia({ navigation }) {
     const [descricao, setDescricao] = useState('')
     const [erro, setErro] = useState(false)
     const { userLogado, setUserLogado } = useUser()
-    const { denuncia, setDenuncia} = useState('')
+    const { denuncia, setDenuncia, setGatilho, gatilho} = useUser() 
 
     const handleTituloChange = (titulo) => { setTitulo(titulo) }
     const handleDescricaoChange = (descricao) => { setDescricao(descricao) }
@@ -28,9 +28,7 @@ export default function Denuncia({ navigation }) {
                     })
                 }
                 await fetch('http://localhost:3000/denuncia', requestOptions)
-                dadosJson.map(e => {
-                    setDenuncia(e)
-                })
+                setGatilho(!gatilho)
             } catch (error) {
                 console.log("Erro post: " + error.message)
             } finally {
@@ -73,7 +71,7 @@ export default function Denuncia({ navigation }) {
                         <Text style={styles.pickImgText}>Escolher arquivos</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button} onPress={authDenuncia}>
+                    <TouchableOpacity style={styles.button} onPress={authDenuncia} >
                         <Text style={styles.textButton}>Publicar</Text>
                     </TouchableOpacity>
 

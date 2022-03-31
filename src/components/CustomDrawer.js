@@ -6,7 +6,7 @@ import { useUser } from '../content/context'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
-const CustomDrawer = (props) => {
+const CustomDrawer = (props, {navigation}) => {
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(true)
     const { userLogado, setUserLogado } = useUser()

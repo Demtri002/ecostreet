@@ -44,6 +44,7 @@ export default function Routes(){
                     headerShown: true
                 }}
             />
+
             <Stack.Screen 
                 name='SuasDenuncias'
                 component={Drawer}

@@ -7,13 +7,13 @@ export default StyleSheet.create({
     },
 
     denunciaContainer:{
-        marginTop: 100,
-        
+        marginTop: 10,
         width: '100%',
         alignItems: 'center'
     },
 
     miniContainer:{
+        flex:1,
         width: '90%',
         height: 80,
         backgroundColor: '#e5e5e5',

@@ -4,7 +4,8 @@ import { validatePathConfig } from '@react-navigation/native'
 const contextUser = createContext()
 
 export default function ContextProvider({children}){
-    const [userLogado,setUserLogado, denuncia, setDenuncia] = useState()
+    const [userLogado,setUserLogado] = useState()
+    const [denuncia, setDenuncia] = useState()
 
 
     return(

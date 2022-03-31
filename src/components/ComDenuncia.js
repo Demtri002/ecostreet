@@ -1,50 +1,56 @@
 import React, { useEffect, useState } from 'react';
-import {SafeAreaView, ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, ScrollView, View, Text, TouchableOpacity, Image, Button } from 'react-native';
 import styles from '../styles/comdenuncia';
 import { FlatList } from 'react-native-gesture-handler';
 import { useUser } from '../content/context'
+import ModalT from '../components/Modal'
 
-const ComDenuncia = () => {
+const ComDenuncia = ({navigation}) => {
     const { userLogado, setUserLogado } = useUser()
     const [data, setData] = useState([])
-    const { denuncia , setDenuncia} = useState('')
 
     const getDenuncia = async () => {
-        try{
+        try {
             const denuncias = await fetch("http://localhost:3000/denuncia")
-            const dadosJson = await denuncias.json()
-            
-            console.log(dadosJson);
-            
-        }catch (error) {
+            const json = await denuncias.json()
+            setData(json)
+
+        } catch (error) {
             console.error(error)
-        }finally{
-            console.log('to aq');
-                        
+        } finally {
+            // console.log('to aq');
+
         }
-        
-}
 
-        useEffect(() => {
-            getDenuncia()
-        }, [])
+    }
 
-    return(
+    useEffect(() => {
+        getDenuncia()
+    }, [])
+console.log(data);
+
+    return (
         <SafeAreaView>
             <ScrollView>
-        <View style={styles.container}>
-
-
-                    {/* <Text style={styles.title}>{userLogado.titulo}</Text>
-                    <Text style={styles.subtitle}>{userLogado.descricao}</Text> */}
-                     <View style={styles.denunciaContainer}>
-                            <View style={styles.miniContainer}>
-                        <Text> {denuncia.titulo} - {denuncia.descricao}</Text>
+                    <FlatList
+                        data={data}
+                        keyExtractor={({ id }, index) => id}
+                        renderItem={({ item }) => (
+                            <View style={styles.container}>
+                                <View style={styles.denunciaContainer}>
+                                    <View style={styles.miniContainer}>
+                                        <Text style={styles.title}>{item.titulo}</Text>
+                                        <Text style={styles.subtitle}>{item.descricao}</Text>
+                                        <View
+                                        >
+                                    </View>
+                                    </View>
                                 </View>
-                        </View>
-
-        </View>
-        </ScrollView>
+                                
+                            </View>
+                        )}
+                    />
+            </ScrollView>
         </SafeAreaView>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { View, Button, Text, Image, TouchableOpacity, RefreshControl } from 'react-native'
-import { ScrollView, FlatList } from 'react-native-gesture-handler'
+import { View, Button, Text, Image, TouchableOpacity } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useUser } from '../content/context'
 import SemDenuncia from '../components/SemDenuncia'
@@ -23,10 +23,25 @@ const SuasDenuncias = ({ navigation }) => {
            setdenunciaArray(dadosJson)
     }
 
+    const getDenuncia = async () => {
+        try {
+            const denuncias = await fetch("http://localhost:3000/denuncia")
+            const json = await denuncias.json()
+            setData(json)
+    
+        } catch (error) {
+            console.error(error)
+        } finally {
+            // console.log('to aq');
+    
+        }
+    
+    }
+    
     useEffect(() =>{
+        getDenuncia()
         denunciasUsuario()
     }, [])
-
 
     return (
         <SafeAreaView>
