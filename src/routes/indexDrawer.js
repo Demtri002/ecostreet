@@ -8,9 +8,15 @@ import CustomDrawer from '../components/CustomDrawer'
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Usuario from '../components/Usuario'
+<<<<<<< HEAD
+import  admin  from '../components/admin';
+
+
+=======
 import FrontPaulo from '../components/FrontPaulo'
 import PauloNew from '../components/PauloNew'
 import Admin from '../components/Admin'
+>>>>>>> d3431b894d1f19ccdac8b6d2140fb578a1bf2322
 
 const Drawer = createDrawerNavigator()
 
@@ -88,7 +94,19 @@ const RotaDrawer = () => {
                         ),
                      }} 
                 />
-
+                  <Drawer.Screen 
+                    name='Admin'
+                    component={admin}
+                    options={{
+                        drawerIcon: ({color}) => (
+                           <SimpleLineIcons
+                              name="question"
+                              size={25}
+                              color={color}
+                           />
+                        ),
+                     }} 
+                />
             </Drawer.Navigator>
     )
 }

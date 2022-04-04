@@ -40,10 +40,12 @@ const PaginaInicial = ({ navigation }) => {
 
 
 
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PaginaSec')}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
                         <Text style={styles.textButton}>COMEÇAR</Text>
                     </TouchableOpacity>
-
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('LoginEmpresa')}>
+                        <Text style={styles.textButton}>COMEÇAR Empresa</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </SafeAreaView>

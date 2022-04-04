@@ -27,6 +27,7 @@ export default function Denuncia({ navigation }) {
                         usersid: userLogado.id
                     })
                 }
+<<<<<<< HEAD
                 await fetch('http://localhost:3000/denuncia', requestOptions)
                 const denuncias = await fetch("http://localhost:3000/denuncia")
                 const json = await denuncias.json()
@@ -34,6 +35,10 @@ export default function Denuncia({ navigation }) {
                 
 
 
+=======
+                await fetch('http://10.3.61.193:3000/denuncia', requestOptions)
+                // setGatilho(!gatilho)
+>>>>>>> a1a5ae769d0a4a342a79a744b6d7a5cc87c61b5b
             } catch (error) {
                 console.log("Erro post: " + error.message)
             } finally {

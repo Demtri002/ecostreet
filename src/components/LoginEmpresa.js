@@ -1,26 +1,24 @@
 import React, { useState } from 'react'
 import {View, Text, TextInput, Button, TouchableOpacity, Image, ScrollView, SafeAreaView} from 'react-native'
 import styles from '../styles/login'
-import { useUser} from '../content/context'
+// import { useUser} from '../content/context'
 
 const Login = ({navigation}) => {
 
     const[email, setEmail] = useState()
     const[senha, setSenha] = useState()
     const [error, setError] = useState(false)
-    const { userLogado, setUserLogado } = useUser()
+    // const { empresaLogado, setEmpresaLogado } = useEmpresa()
 
-    const authUser = async (req, res) => {
-            const dadosUsuario = await fetch("http://10.3.61.193:3000/users")
+    const authEmpresa = async (req, res) => {
+            const dadosUsuario = await fetch("http://localhost:3000/empresa")
             const dadosJson =  await dadosUsuario.json()
-            console.log(dadosUsuario);
-            
 
             dadosJson.map(e =>{
                 if(e.email == email && e.senha == senha){
 
-                    setUserLogado(e)
-                    navigation.navigate('SuasDenuncias')
+                    setEmpresaLogado(e)
+                    navigation.navigate('admin')
                 }else{
                     setError(true)
                 }
@@ -52,13 +50,13 @@ const Login = ({navigation}) => {
                                 <TextInput style={styles.input} placeholder={"Senha:"} onChange={e => setSenha(e.target.value)} secureTextEntry={true}></TextInput>
                                 <Text style={styles.texterro}>{error == true ? 'Email ou senha inválidos' : ''}</Text>
 
-                                <TouchableOpacity style={styles.button} onPress={authUser}>
+                                <TouchableOpacity style={styles.button} onPress={authEmpresa}>
                                         <Text style={styles.textButton}>LOGAR</Text>
                                 </TouchableOpacity>
 
                                 <View style={styles.display}>
                                     <Text style={styles.p1}>Não tem uma conta?</Text>
-                                    <Text style={styles.p2} onPress={() => navigation.navigate("Cadastro")}> Cadastre-se!</Text>
+                                    <Text style={styles.p2} onPress={() => navigation.navigate("CadastroEmpresa")}> Cadastre-se!</Text>
                                 </View>
                          </View>
 

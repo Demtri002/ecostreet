@@ -13,14 +13,10 @@ import Denuncia from '../components/Denuncia'
 import PaginaInicial from '../components/PaginaInicial'
 import SemDenuncia from '../components/SemDenuncia'
 import ComDenuncia from '../components/ComDenuncia'
-<<<<<<< HEAD
 import PaginaSec from '../components/PaginaSec'
 import CadastroEmpresa from '../componentsEmpresa/CadastroEmpresa'
 import LoginEmpresa from '../componentsEmpresa/LoginEmpresa'
 
-=======
-import CustomDrawer from '../components/CustomDrawer'
->>>>>>> d3431b894d1f19ccdac8b6d2140fb578a1bf2322
 
 const Stack = createNativeStackNavigator()
 
@@ -125,7 +121,6 @@ export default function Routes(){
                     headerShown: true
                 }}
             />
-<<<<<<< HEAD
              <Stack.Screen 
                 name='PaginaSec'
                 component ={PaginaSec}
@@ -147,11 +142,6 @@ export default function Routes(){
                     headerShown: true
                 }}
             />
-=======
-
-            
-            
->>>>>>> d3431b894d1f19ccdac8b6d2140fb578a1bf2322
 
         </Stack.Navigator>
     )
