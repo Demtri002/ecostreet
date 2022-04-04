@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, ScrollView, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import styles from '../styles/aboutus';
 
-const AboutUs = () => {
+const AboutUs = ({navigation}) => {
 
     return(
 
@@ -10,15 +10,19 @@ const AboutUs = () => {
     <ScrollView>
         <View style={styles.container}>
 
-            <View >
-            <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.imgperfil}>
-                <Image
-                    source={require('../assets/fotoperfil.jpg')} 
-                />
-            </TouchableOpacity>
-            <View >
-            <Text >Suas Denúncias</Text>
-            </View>
+        <View style={styles.flex}>
+
+            <Text style={styles.textHeader}>Sobre a Ecostreet</Text>
+
+                            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                           
+                           <Image
+                               source={require('../assets/Group.png')} style={styles.openDrawer}
+                               resizeMode='contain'
+                           />
+                       
+                   </TouchableOpacity>
+
             </View>
             <Image
                 resizeMode='contain'

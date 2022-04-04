@@ -13,6 +13,7 @@ import Denuncia from '../components/Denuncia'
 import PaginaInicial from '../components/PaginaInicial'
 import SemDenuncia from '../components/SemDenuncia'
 import ComDenuncia from '../components/ComDenuncia'
+import CustomDrawer from '../components/CustomDrawer'
 
 const Stack = createNativeStackNavigator()
 
@@ -117,6 +118,8 @@ export default function Routes(){
                     headerShown: true
                 }}
             />
+
+            
             
 
         </Stack.Navigator>

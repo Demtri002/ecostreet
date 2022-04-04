@@ -10,7 +10,7 @@ export default function Denuncia({ navigation }) {
     const [descricao, setDescricao] = useState('')
     const [erro, setErro] = useState(false)
     const { userLogado, setUserLogado } = useUser()
-    const { denuncia, setDenuncia, setGatilho, gatilho} = useUser() 
+    const { denuncia, setDenuncia} = useUser() 
 
     const handleTituloChange = (titulo) => { setTitulo(titulo) }
     const handleDescricaoChange = (descricao) => { setDescricao(descricao) }
@@ -28,7 +28,7 @@ export default function Denuncia({ navigation }) {
                     })
                 }
                 await fetch('http://localhost:3000/denuncia', requestOptions)
-                setGatilho(!gatilho)
+                
             } catch (error) {
                 console.log("Erro post: " + error.message)
             } finally {

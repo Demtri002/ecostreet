@@ -8,6 +8,30 @@ export default StyleSheet.create({
         alignItems: 'center'
 
     },
+
+    flex:{
+        flex: 1,
+        backgroundColor:'#0f644d',
+        width: '100%',
+        paddingVertical: 25,
+        
+    },
+
+    openDrawer: {
+        width: 30,
+        height: 30,
+        position: 'absolute',
+        marginHorizontal: 8,
+        marginTop: -25
+        
+        },
+  
+    
+    textHeader: {
+        color:'#fff',
+        fontSize: 17,
+        textAlign: 'center'
+    },
         
     logoSn:{
         marginTop: 50,

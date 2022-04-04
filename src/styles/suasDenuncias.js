@@ -33,24 +33,28 @@ export default StyleSheet.create({
         opacity:0.8
     }, 
 
-    imgperfil: {
-        width: 35,
-        height: 35,
-        marginTop:25,
-        marginLeft: 10,
-        borderRadius: 50
-    },
     flex:{
-        flexDirection:'row',
-        backgroundColor:'#002F21'
+        flex: 1,
+        backgroundColor:'#0f644d',
+        width: '100%',
+        paddingVertical: 25,
+        
     },
-    header:{
-        paddingTop:50,
-        paddingBottom: 50,
-    },
+
+    openDrawer: {
+        width: 30,
+        height: 30,
+        position: 'absolute',
+        marginHorizontal: 8,
+        marginTop: -25
+        
+        },
+  
+    
     textHeader: {
         color:'#fff',
-        fontSize:17,
+        fontSize: 17,
+        textAlign: 'center'
     },
 
     addButton:{
