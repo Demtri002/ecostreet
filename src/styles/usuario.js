@@ -6,8 +6,32 @@ export default StyleSheet.create({
         flex:1,
     },
 
+    flex:{
+        flex: 1,
+        backgroundColor:'#0f644d',
+        width: '100%',
+        paddingVertical: 25,
+        
+    },
+
+    openDrawer: {
+        width: 30,
+        height: 30,
+        position: 'absolute',
+        marginHorizontal: 8,
+        marginTop: -25
+        
+        },
+  
+    
+    textHeader: {
+        color:'#fff',
+        fontSize: 17,
+        textAlign: 'center'
+    },
+
     title: {
-        marginTop: 100,
+        marginTop: 50,
         textAlign: 'center',
         fontSize: 25
     },

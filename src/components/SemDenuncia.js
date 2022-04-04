@@ -8,12 +8,12 @@ const SemDenuncia = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.container}>
-                    <View style={styles.centro}>
-                        <Image style={styles.balao}
-                            source={require('../assets/balao.png')}
+                    <View style={styles.content}>
+                        <Image style={styles.empty}
+                            source={require('../assets/empty.png')}
                             resizeMode='contain'
                         />
-                        <Text style={styles.p1}>Ops! Parece que você não possui denúncias ativas!</Text>
+                        <Text style={styles.p1}>Nada novo por aqui...</Text>
                         <Text style={styles.p2}>Comece a denunciar clicando no botão abaixo!</Text>
                     </View>
 

@@ -47,18 +47,20 @@ const SuasDenuncias = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.container}>
-                    <View style={styles.flex}>
-                        <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                            <View style={{ width: 100, marginHorizontal: 10, marginTop: 13, marginBottom: 10 }}>
-                                <Image
-                                    source={require('../assets/fotoperfil.jpg')} style={styles.imgperfil}
-                                />
-                            </View>
-                        </TouchableOpacity>
-                        <View style={styles.header}>
-                            <Text style={styles.textHeader}>Suas Denúncias</Text>
-                        </View>
-                    </View>
+                <View style={styles.flex}>
+
+            <Text style={styles.textHeader}>Suas denúncias</Text>
+
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+               
+               <Image
+                   source={require('../assets/Group.png')} style={styles.openDrawer}
+                   resizeMode='contain'
+               />
+           
+       </TouchableOpacity>
+
+</View>
                         {denunciaArray.length == 0 ? <SemDenuncia /> : <ComDenuncia/>}
                     
 
