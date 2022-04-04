@@ -1,13 +1,12 @@
 import React from 'react'
 import {createDrawerNavigator} from '@react-navigation/drawer'
 
-import SuasDenuncias from '../components/SuasDenuncias'
+// import SuasDenuncias from '../components/SuasDenuncias'
 import AboutUs from '../components/AboutUs'
-import CustomDrawer from '../components/CustomDrawer'
+import CustomDrawer from '../componentsEmpresa/CustomDrawerAdmin'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
-import Usuario from '../components/Usuario'
 import  admin  from '../components/admin';
 
 
@@ -29,21 +28,20 @@ const RotaDrawer = () => {
                     drawerLabelStyle:
                      {fontSize: 16, marginLeft:-32, padding:10}}}
             >
-
-                <Drawer.Screen 
-                 name='Suas Denúncias'
-                 component={SuasDenuncias}
-                 options={{
-                    drawerIcon: ({color}) => (
-                       <Ionicons
-                          name="ios-alert-circle-outline"
-                          size={30}
-                          color={color}
-                       />
-                    ),
-                 }}
-                 
-                 />
+                  <Drawer.Screen 
+                    name='Admin'
+                    component={admin}
+                    options={{
+                        drawerIcon: ({color}) => (
+                           <SimpleLineIcons
+                              name="question"
+                              size={25}
+                              color={color}
+                           />
+                        ),
+                     }} 
+                />
+               
                 
                 <Drawer.Screen 
                     name='Sobre'
@@ -60,8 +58,8 @@ const RotaDrawer = () => {
                 />
                     
                     <Drawer.Screen 
-                    name='Usuario'
-                    component={Usuario}
+                    name='Empresa'
+                    component={Empresa}
                     options={{
                         drawerIcon: ({color}) => (
                            <SimpleLineIcons
@@ -72,19 +70,7 @@ const RotaDrawer = () => {
                         ),
                      }} 
                 />
-                  <Drawer.Screen 
-                    name='Admin'
-                    component={admin}
-                    options={{
-                        drawerIcon: ({color}) => (
-                           <SimpleLineIcons
-                              name="question"
-                              size={25}
-                              color={color}
-                           />
-                        ),
-                     }} 
-                />
+               
             </Drawer.Navigator>
     )
 }

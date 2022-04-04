@@ -15,7 +15,7 @@ const SuasDenuncias = ({ navigation }) => {
     const denunciasUsuario = async (req, res) => {
             console.log("FRONT iduser:" + userLogado.id)
             
-            const denuncias = await fetch("http://localhost:3000/denuncia/" + userLogado.id)
+            const denuncias = await fetch("http://10.3.61.193:3000/denuncia/" + userLogado.id)
             const dadosJson = await denuncias.json()
             console.warn(dadosJson.length)
             console.log(dadosJson.length)
@@ -25,9 +25,9 @@ const SuasDenuncias = ({ navigation }) => {
 
     const getDenuncia = async () => {
         try {
-            const denuncias = await fetch("http://localhost:3000/denuncia")
+            const denuncias = await fetch("http://10.3.61.193:3000/denuncia")
             const json = await denuncias.json()
-            setData(json)
+            // setData(json)
     
         } catch (error) {
             console.error(error)

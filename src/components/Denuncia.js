@@ -27,8 +27,8 @@ export default function Denuncia({ navigation }) {
                         usersid:userLogado.id
                     })
                 }
-                await fetch('http://localhost:3000/denuncia', requestOptions)
-                setGatilho(!gatilho)
+                await fetch('http://10.3.61.193:3000/denuncia', requestOptions)
+                // setGatilho(!gatilho)
             } catch (error) {
                 console.log("Erro post: " + error.message)
             } finally {

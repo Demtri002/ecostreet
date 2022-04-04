@@ -2,18 +2,18 @@ import React, {useEffect, useState}from "react";
 import { View, Text, Image, ActivityIndicator, FlatList, TextInput} from 'react-native'
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer'
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { useUser } from '../content/context'
+import { useEmpresa } from '../content/contextEmpresa'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
 const CustomDrawer = (props, {navigation}) => {
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(true)
-    const { userLogado, setUserLogado } = useUser()
+    const { empresaLogado, setEmpresaLogado } = useEmpresa()
 
-    const getLogin = async () => {
+    const getLoginEmpresa = async () => {
         try{
-            const response = await fetch('http://10.3.61.193:3000/users/')
+            const response = await fetch('http://10.3.61.193:3000/empresa/')
             const json = await response.json()
             setData(json)
         }catch (error) {
@@ -24,7 +24,7 @@ const CustomDrawer = (props, {navigation}) => {
 }
 
     useEffect(() => {
-        getLogin()
+        getLoginEmpresa()
     }, [])
 
 
@@ -36,7 +36,7 @@ const CustomDrawer = (props, {navigation}) => {
                     <Image source={require('../assets/fotoperfil.jpg')} style={{height:80, width:80,borderRadius: 50,  marginBottom:10}}/>
                     <Text style={{color:'white', marginVertical:35, marginLeft:10}}>
                         <View>
-                            <Text style={{fontSize:18}}> {userLogado.nome} {userLogado.sobrenome}</Text>
+                            <Text style={{fontSize:18}}> {empresaLogado.nome} {empresaLogado.sobrenome}</Text>
                         </View>
                 </Text>
                 </View>

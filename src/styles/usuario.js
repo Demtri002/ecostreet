@@ -11,6 +11,11 @@ export default StyleSheet.create({
         textAlign: 'center',
         fontSize: 25
     },
+    subtitle:{
+        marginTop: 0,
+        textAlign: 'center',
+        fontSize: 20
+    },
 
     content:{
         marginTop: 50,
