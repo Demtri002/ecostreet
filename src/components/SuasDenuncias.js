@@ -9,25 +9,22 @@ import ComDenuncia from '../components/ComDenuncia'
 import styles from '../styles/suasDenuncias'
 
 const SuasDenuncias = ({ navigation }) => {
-    const[denunciaArray, setdenunciaArray] = useState([])
-    const { userLogado, setUserLogado } = useUser()
+     const[denunciaArray, setdenunciaArray] = useState([])
+    const { userLogado, setUserLogado,setDenuncia, denuncia } = useUser()
 
     const denunciasUsuario = async (req, res) => {
             console.log("FRONT iduser:" + userLogado.id)
             
             const denuncias = await fetch("http://localhost:3000/denuncia/" + userLogado.id)
             const dadosJson = await denuncias.json()
-            console.warn(dadosJson.length)
-            console.log(dadosJson.length)
-            
-           setdenunciaArray(dadosJson)
+           setDenuncia(dadosJson)
     }
 
     const getDenuncia = async () => {
         try {
             const denuncias = await fetch("http://localhost:3000/denuncia")
             const json = await denuncias.json()
-            setData(json)
+            // setData(json)
     
         } catch (error) {
             console.error(error)
@@ -43,6 +40,8 @@ const SuasDenuncias = ({ navigation }) => {
         denunciasUsuario()
     }, [])
 
+    console.log("teste",denuncia);
+    
     return (
         <SafeAreaView>
             <ScrollView>
@@ -61,7 +60,7 @@ const SuasDenuncias = ({ navigation }) => {
        </TouchableOpacity>
 
 </View>
-                        {denunciaArray.length == 0 ? <SemDenuncia /> : <ComDenuncia/>}
+                        {denuncia.length == 0 ? <SemDenuncia /> : <ComDenuncia/>}
                     
 
                         <TouchableOpacity onPress={() => navigation.navigate('Categoria')} style={styles.img}>

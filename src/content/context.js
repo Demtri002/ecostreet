@@ -5,7 +5,7 @@ const contextUser = createContext()
 
 export default function ContextProvider({children}){
     const [userLogado,setUserLogado] = useState()
-    const [denuncia, setDenuncia] = useState()
+    const [denuncia, setDenuncia] = useState([])
 
 
     return(

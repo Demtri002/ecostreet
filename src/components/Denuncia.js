@@ -10,7 +10,7 @@ export default function Denuncia({ navigation }) {
     const [descricao, setDescricao] = useState('')
     const [erro, setErro] = useState(false)
     const { userLogado, setUserLogado } = useUser()
-    const { denuncia, setDenuncia} = useUser() 
+    const { denuncia, setDenuncia } = useUser()
 
     const handleTituloChange = (titulo) => { setTitulo(titulo) }
     const handleDescricaoChange = (descricao) => { setDescricao(descricao) }
@@ -24,11 +24,16 @@ export default function Denuncia({ navigation }) {
                     body: JSON.stringify({
                         titulo: titulo,
                         descricao: descricao,
-                        usersid:userLogado.id
+                        usersid: userLogado.id
                     })
                 }
                 await fetch('http://localhost:3000/denuncia', requestOptions)
+                const denuncias = await fetch("http://localhost:3000/denuncia")
+                const json = await denuncias.json()
+                setDenuncia(json)
                 
+
+
             } catch (error) {
                 console.log("Erro post: " + error.message)
             } finally {

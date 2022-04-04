@@ -3,10 +3,10 @@ import { SafeAreaView, ScrollView, View, Text, TouchableOpacity, Image, Button }
 import styles from '../styles/comdenuncia';
 import { FlatList } from 'react-native-gesture-handler';
 import { useUser } from '../content/context'
-import ModalT from '../components/Modal'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const ComDenuncia = ({navigation}) => {
-    const { userLogado, setUserLogado } = useUser()
+    const { userLogado, setUserLogado, denuncia } = useUser()
     const [data, setData] = useState([])
 
     const getDenuncia = async () => {
@@ -23,6 +23,23 @@ const ComDenuncia = ({navigation}) => {
         }
 
     }
+    const deleteDenuncia = async (id) => {
+        const requestOptions = {
+            method: 'DELETE',
+            header: { 'Content-type': 'application/json' }
+        }
+
+        try{
+
+            console.log("ID:" + id)
+            await fetch('http://localhost:3000/denuncia/' + id, requestOptions)
+            setData(data.filter(user => user.id != id))
+        }catch (error) {
+            console.error(error)
+        }finally{
+            setLoading(false)
+        }
+    }
 
     useEffect(() => {
         getDenuncia()
@@ -33,7 +50,7 @@ console.log(data);
         <SafeAreaView>
             <ScrollView>
                     <FlatList
-                        data={data}
+                        data={denuncia}
                         keyExtractor={({ id }, index) => id}
                         renderItem={({ item }) => (
                             <View style={styles.container}>
@@ -41,10 +58,12 @@ console.log(data);
                                     <View style={styles.miniContainer}>
                                         <Text style={styles.title}>{item.titulo}</Text>
                                         <Text style={styles.subtitle}>{item.descricao}</Text>
+                                        
                                         <View
                                         >
                                     </View>
                                     </View>
+                                    
                                 </View>
                                 
                             </View>
